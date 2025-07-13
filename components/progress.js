@@ -28,13 +28,13 @@ export default class Progress {
     this.svg = container.querySelector(".progress-svg");
     this.fg = container.querySelector(".progress-fg");
 
-    this.circumference = 2 * Math.PI * ((size - strokeWidth) / 2);
-    this.fg.style.strokeDasharray = this.circumference;
-    this.fg.style.strokeDashoffset = this.circumference;
+    this.circle = 2 * Math.PI * ((size - strokeWidth) / 2);
+    this.fg.style.strokeDasharray = this.circle;
+    this.fg.style.strokeDashoffset = this.circle;
   }
 
   setValue(value) {
-    this.fg.style.strokeDashoffset = this.circumference * (1 - value / 100);
+    this.fg.style.strokeDashoffset = this.circle * (1 - value / 100);
   }
 
   startAnimation() {
