@@ -1,0 +1,157 @@
+.app-body {
+    background: #fff;
+    font-family: Arial, sans-serif;
+    color: #111;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app {
+    width: 100%;
+    max-width: 320px;
+    height: 568px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+@media (orientation: landscape) {
+    .app {
+        flex-direction: row;
+        max-width: 568px;
+        max-height: 320px;
+    }
+}
+
+.app-title {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 50px;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.progress-wrapper__container {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.controls__form {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.controls__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.controls__legend {
+    font-size: 18px;
+    color: #111;
+}
+
+.controls__label {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #111;
+}
+
+.controls__input-checkbox,
+.controls__input-value {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    margin: 0;
+}
+
+.controls__input-value {
+    border: 1px solid #111;
+    padding: 0;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+
+
+.controls__input-checkbox {
+    appearance: none;
+    background: #e5e7eb;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls__input-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.controls__input-checkbox:checked {
+    background: #007aff;
+}
+
+.controls__input-checkbox:checked::after {
+    transform: translateX(20px);
+}
+
+.controls__input-value::-webkit-outer-spin-button,
+.controls__input-value::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(270deg);
+    }
+}
+
+.rotate {
+    animation: spin 2s linear infinite;
+}

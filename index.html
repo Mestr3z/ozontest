@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ozon test</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body class="app-body">
+    <main class="app" role="main">
+        <h1 class="app-title">Progress</h1>
+        <section class="progress-wrapper" aria-label="Индикатор прогресса">
+            <div id="progress-container" class="progress-wrapper__container"></div>
+        </section>
+
+        <section class="controls">
+            <form id="controls" class="controls__form" aria-label="Управление Progress">
+                <fieldset class="controls__fieldset">
+
+                    <label for="value" class="controls__label controls__label-value">
+                        <input type="number" id="value" name="value" class="controls__input controls__input-value"
+                            min="0" max="100" value="0"/>
+                        Value
+                    </label>
+
+                    <label for="animate" class="controls__label controls__label-animate">
+                        <input type="checkbox" id="animate" name="animate"
+                            class="controls__input controls__input-checkbox" />
+                        Animate
+                    </label>
+
+                    <label for="hide" class="controls__label controls__label-hide">
+                        <input type="checkbox" id="hide" name="hide" class="controls__input controls__input-checkbox" />
+                        Hide
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="components/app.js"></script>
+</body>
+
+</html>
