@@ -7,7 +7,13 @@ const animateCheckbox = document.getElementById("animate");
 const hideCheckbox = document.getElementById("hide");
 
 valueInput.addEventListener("input", (e) => {
-  progress.setValue(+e.target.value);
+  let rawValue = parseInt(e.target.value, 10);
+  if (isNaN(rawValue)) return;
+
+  let clampedValue = Math.min(100, Math.max(0, rawValue));
+
+  e.target.value = clampedValue;
+  progress.setValue(clampedValue);
 });
 
 animateCheckbox.addEventListener("change", (e) => {
